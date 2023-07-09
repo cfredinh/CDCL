@@ -10,7 +10,7 @@ class ImagesDS(BaseSet):
         self.name = self.__class__.__name__
         self.extend_train_set = extend_train_set
         df            = pd.read_csv(csv_file)
-        self.n_classes     = 1139 #len(df.sirna_id.unique())
+        self.n_classes     = 1139 
         self.n_batches     = len(df.experiment.unique())
         self.batch_size = batch_size
         df            = df[(df.dataset == mode) & (df.cell_type == "HUVEC")]
